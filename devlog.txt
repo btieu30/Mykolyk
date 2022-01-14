@@ -1,0 +1,7 @@
+Mykolyk -- Brianna Tieu and Fang Chen
+APCS pd06
+
+01-13: BRAINSTORMING possible game ideas in Java, main working idea is Piano
+Tiles. (p.s. install password manager)
+
+
