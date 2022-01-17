@@ -77,7 +77,14 @@ Both :: Brainstorm of game ideas and form primitive plan
 
 2022-01-14
 --------------------------------------------------------------
-Fang :: Updated devlog.txt
+Fang :: Updated devlog.txt to proper format
 Bri :: Procured of kTs
-Both :: Vison on paper.
+Both :: More brainstorming; created vison on paper
+==============================================================
+
+2021-01-17
+--------------------------------------------------------------
+Fang :: Revise Propro; create primitive version of Woo.java (v0)
+Bri :: Creation and upload team flag; draft Propro
+Both :: Further deliberation of project objective; Came to the decision that we will create Connect 4 instead of the Piano Tiles
 ==============================================================
