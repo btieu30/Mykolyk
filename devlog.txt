@@ -82,9 +82,16 @@ Bri :: Procured of kTs
 Both :: More brainstorming; created vison on paper
 ==============================================================
 
-2021-01-17
+2022-01-17
 --------------------------------------------------------------
 Fang :: Revise Propro; create primitive version of Woo.java (v0)
 Bri :: Creation and upload team flag; draft Propro
 Both :: Further deliberation of project objective; Came to the decision that we will create Connect 4 instead of the Piano Tiles
+==============================================================
+
+2022-01-18
+--------------------------------------------------------------
+Fang ::
+Bri ::
+Both :: Create v1 of Woo.java with new instance variable and display() method to print the current state of the board.  
 ==============================================================
