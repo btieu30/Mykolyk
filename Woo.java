@@ -84,7 +84,10 @@ public class Woo {
 			}
 			System.out.print("|\n");
 		}
-		System.out.println("=========================");
+		for (int col = 1; col <= _columns; col++) {
+			System.out.print ("  " + col + " ");
+		}
+		System.out.println("\n=========================");
 
 	}
 
