@@ -79,7 +79,7 @@ Both :: Brainstorm of game ideas and form primitive plan
 --------------------------------------------------------------
 Fang :: Updated devlog.txt to proper format
 Bri :: Procured of kTs
-Both :: More brainstorming; created vison on paper
+Both :: More brainstorming; created vision on paper
 ==============================================================
 
 2022-01-17
@@ -93,5 +93,5 @@ Both :: Further deliberation of project objective; Came to the decision that we 
 --------------------------------------------------------------
 Fang ::
 Bri ::
-Both :: Create v1 of Woo.java with new instance variable and display() method to print the current state of the board.  
+Both :: Create v1 of Woo.java with new instance variable and display() method to print the current state of the board.
 ==============================================================
