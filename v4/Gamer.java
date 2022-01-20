@@ -11,7 +11,7 @@ public class Gamer extends Player {
   }
 
   public Gamer(String tag, String newColor) {
-    Gamer();
+    this();
     _name = tag;
     _color = newColor;
   }
@@ -20,7 +20,7 @@ public class Gamer extends Player {
     return _name;
   }
 
-  public String stats() {\
+  public String stats() {
     return "Wins:Losses = " + _wins + ":" + _losses;
   }
 

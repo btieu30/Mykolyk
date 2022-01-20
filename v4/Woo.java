@@ -97,59 +97,78 @@ public class Woo {
         }
 
 
-        public void play() {
+        public void play(Gamer hum) {
+
                 Scanner s = new Scanner(System.in);
                         display();
                         int _selection = s.nextInt();
                         if (_selection < 0 || _selection >= _columns) {
                                 System.err.print("Invalid Input. Please try again.");
                         } else {
-                          for (int i = _rows - 1; i >= 0; i--) {
-                            if (_board[i][_selection] == " ") {
-                              _board[i][_selection] = "t"; //change with player's color
-                              break;
-                            }
-                          }
+                                for (int i = _rows - 1; i >= 0; i--) {
+                                        if (_board[i][_selection] == " ") {
+                                                _board[i][_selection] = hum.color(); //change with player's color
+                                                break;
+                                        }
+                                }
                         }
+
                 }
 
 
         public void botPlay() {
+
                 int _selection = (int) ((_columns) * Math.random() );
                 for (int i = _rows - 1; i >= 0; i--) {
-                  if (_board[i][_selection] == " ") {
-                        _board[i][_selection] = "B";
-                        break;
-                      }
-                    }
-                  }
+                        if (_board[i][_selection] == " ") {
+                                _board[i][_selection] = "B";
+                                break;
+                        }
+                }
+        }
 
 
         public void singlePlay() {
+
                 int _maxTurns = _rows * _columns;
                 int turn = 0;
+                Scanner s = new Scanner(System.in);
+
+                System.out.print("\nWell well, I see that you are alone. What doest thou call themselves? ");
+                System.out.print("\nType your name: ");
+                Gamer Mykolyk = new Gamer(s.next(), "Temp");
+
+                System.out.print("\nPick a character of your choice: ");
+                Mykolyk.setColor((s.next()));
+
                 while (turn <= _maxTurns) { //and while there is no winner
-                    System.out.println("\nThinkeren, make your move by choosing your column of destiny.");
-                    play();
+                    System.out.println("\n" + Mykolyk.name() + ", make your move by choosing your column of destiny.");
+                    play(Mykolyk);
                     turn++;
                     botPlay();
                     turn++;
-                  }
                 }
+
+        }
 
 
         public void multiPlay() {
+
+                Gamer Fang = new Gamer();
+                Gamer Bri = new Gamer();
+
                 int _maxTurns = _rows * _columns;
                 int turn = 0;
                 while (turn <= _maxTurns) { //and while there is no winner
                     System.out.println("\nPlayer 1, make your move.");
-                    play();
+                    play(Fang);
                     turn++;
                     System.out.println("\nPlayer 2, make your move.");
-                    play();
+                    play(Bri);
                     turn++;
-                  }
                 }
+        
+        }
 
 
         public static void main(String[] args) {
