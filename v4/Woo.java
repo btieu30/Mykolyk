@@ -10,7 +10,7 @@ public class Woo {
         private String[][] _board;
         private int _rows;
         private int _columns;
-        public String _winner;
+        private String _winner;
 
         public Woo() {
 
@@ -23,8 +23,9 @@ public class Woo {
                                 _board[r][c] = " ";
                         }
                 }
-                
+
         }
+
 
         public void welcome() {
 
@@ -66,7 +67,7 @@ public class Woo {
                                 if (modeChoice == 1) {
                                         _mode = 2;
                                 } else
-                                        System.out.println("Returning to the menu...");
+                                        System.out.println("Invalid. Returning to the menu...");
                         } else
                         if (menuChoice == 2 && _mode > 0) {
                                 break;
@@ -81,8 +82,8 @@ public class Woo {
         public void display() {
 
                 for (int col = 0; col < _columns; col++) {
-                                        System.out.print ("  " + col + " ");
-                                }
+                         System.out.print ("  " + col + " ");
+                }
 
                 System.out.println("\n=========================");
                 for (int i = 0; i < _rows; i ++) {
@@ -94,6 +95,7 @@ public class Woo {
                 System.out.println("=========================\n");
 
         }
+
 
         public void play() {
                 Scanner s = new Scanner(System.in);
@@ -111,6 +113,7 @@ public class Woo {
                         }
                 }
 
+
         public void botPlay() {
                 int _selection = (int) ((_columns) * Math.random() );
                 for (int i = _rows - 1; i >= 0; i--) {
@@ -120,6 +123,7 @@ public class Woo {
                       }
                     }
                   }
+
 
         public void singlePlay() {
                 int _maxTurns = _rows * _columns;
@@ -133,6 +137,7 @@ public class Woo {
                   }
                 }
 
+
         public void multiPlay() {
                 int _maxTurns = _rows * _columns;
                 int turn = 0;
@@ -145,6 +150,7 @@ public class Woo {
                     turn++;
                   }
                 }
+
 
         public static void main(String[] args) {
                 Woo game = new Woo();

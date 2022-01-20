@@ -1,7 +1,11 @@
 public class Bot extends Player {
 
   public Bot() {
-    // initialize
+    _color = "B";
+  }
+
+  public Bot(String color) {
+    _color = color;
   }
 
 }

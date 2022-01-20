@@ -7,9 +7,16 @@ public class Gamer extends Player {
   public Gamer() {
     _wins = 0;
     _losses = 0;
+    _name = "Gamer";
   }
 
-  public name() {
+  public Gamer(String tag, String newColor) {
+    Gamer();
+    _name = tag;
+    _color = newColor;
+  }
+
+  public String name() {
     return _name;
   }
 
