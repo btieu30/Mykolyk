@@ -100,6 +100,6 @@ Create and upload UML diagram.
 2022-01-19
 --------------------------------------------------------------
 Fang :: Updated UML diagram; Added v4 (Working customization in singlePlay(); Updated Player + subclasses files)
-Bri :: Add v3 of Woo.java; update README
+Bri :: Add v3 of Woo.java (Working "drop" of pieces as columns are chosen, updated board as gameplay continues); Update README; Add flowchart
 Both :: Create v2 of Woo.java and helper classes (Bot, Gamer, Player)
 ==============================================================
