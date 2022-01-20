@@ -32,15 +32,16 @@ public class Woo {
                 Scanner s = new Scanner(System.in);
                 int menuChoice = -1;
                 int modeChoice = -1;
+                String tempScan = "";
 
-                String msg = "Hey thinkeren, welcome to Connect 4 Life!";
+                String msg = "\nHey thinkeren, welcome to Connect 4 Life!";
                 msg += "\n[insert another message]";
-                msg += "\n====================================";
                 System.out.println(msg);
 
                 while (true) {
 
-                        msg = "\nMENU";
+                        msg = "\n====================================\n";
+                        msg += "\nMENU";
                         msg += "\n0: How-To-Play";
                         msg += "\n1: GameMode Selection";
 
@@ -53,10 +54,16 @@ public class Woo {
                         menuChoice = s.nextInt();
 
                         if (menuChoice == 0) {
-                                System.out.println("\nDirections: \n- Begin by choosing your gamemode: single player or multiplayer." +
-                                "\nSingle player: Face off against ten-time Connect 4 Champion, Bot Mykolyk." +
-                                "\nMultiplayer: Find another thinkeren and take turns switching control of the machine to face off." +
-                                "\n- Choose your color and symbol, then begin the game and place your pieces by choosing the column number until you get a row (horizontally, vertically, diagonally) of 4 pieces to win!");
+                                msg = "\n====================================\n";
+                                msg += "\nDirections: ";
+                                msg += "\n- Begin by choosing your gamemode: single player or multiplayer.";
+                                msg += "\n- Single player: Face off against ten-time Connect 4 Champion, Bot Mykolyk.";
+                                msg += "\n- Multiplayer: Find another thinkeren and take turns switching control of \n  the machine to face off.";
+                                msg += "\n- Choose your color and symbol, then begin the game and place your pieces \n  by choosing the column number until you get a row (horizontally, \n  vertically, diagonally) of 4 pieces to win!";
+                                System.out.println(msg);
+                                System.out.print("\nType Something to Return: ");
+                                tempScan = s.next();
+
                         } else
                         if (menuChoice == 1) {
                                 System.out.print("\nPick a mode:");
@@ -137,13 +144,24 @@ public class Woo {
                 int turn = 0;
                 Scanner s = new Scanner(System.in);
                 Bot poggers = new Bot();
+                String pickColor = "";
 
                 System.out.print("\nWell well, I see that you are alone. What doest thou call themselves? ");
                 System.out.print("\nType your name: ");
                 Gamer Mykolyk = new Gamer(s.next(), "Temp");
 
-                System.out.print("\nPick a character of your choice: ");
-                Mykolyk.setColor((s.next()));
+                while (true) {
+                        System.out.print("\nPick a character of your choice: ");
+                        pickColor = s.next();
+                        
+                        if (!(pickColor.equals("")) && pickColor.length() == 1) {
+                                Mykolyk.setColor(pickColor);
+                                break;
+                        } else {
+                                System.out.print("\nThat's not a character. Try again");
+                        }  
+                }
+                
 
                 while ((turn <= _maxTurns) && (_winner.compareTo("") == 0) ) { //and while there is no winner
                     System.out.println("\n" + Mykolyk.name() + ", make your move by choosing your column of destiny.");
