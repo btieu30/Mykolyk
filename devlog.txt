@@ -96,3 +96,10 @@ Bri :: Add column nums to v1; update .gitignore
 Both :: Create v1 of Woo.java with new instance variable and display() method to print the current state of the board.
 Create and upload UML diagram.
 ==============================================================
+
+2022-01-19
+--------------------------------------------------------------
+Fang ::
+Bri :: Add v3 of Woo.java; update README
+Both :: Create v2 of Woo.java and helper classes (Bot, Gamer, Player)
+==============================================================
