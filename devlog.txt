@@ -107,6 +107,6 @@ Both :: Create v2 of Woo.java and helper classes (Bot, Gamer, Player)
 2022-01-20
 --------------------------------------------------------------
 Fang :: 
-Bri :: Create v5 of Woo.java and edit Bot.java (Add customization to Bots + v5 checks for hoizontal and vertical matches
+Bri :: Create v5 of Woo.java and edit Bot.java (Add customization to Bots + v5 checks for hoizontal and vertical matches w/ updated directions
 Both :: 
 ==============================================================

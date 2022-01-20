@@ -34,7 +34,7 @@ public class Woo {
                 int modeChoice = -1;
 
                 String msg = "Hey thinkeren, welcome to Connect 4 Life!";
-                msg += "\n[Insert More Message]";
+                msg += "\n[insert another message]";
                 msg += "\n====================================";
                 System.out.println(msg);
 
@@ -53,7 +53,10 @@ public class Woo {
                         menuChoice = s.nextInt();
 
                         if (menuChoice == 0) {
-                                System.out.println("\n[Insert How-To-Play]");
+                                System.out.println("\nDirections: \n- Begin by choosing your gamemode: single player or multiplayer." +
+                                "\nSingle player: Face off against ten-time Connect 4 Champion, Bot Mykolyk." +
+                                "\nMultiplayer: Find another thinkeren and take turns switching control of the machine to face off." +
+                                "\n- Choose your color and symbol, then begin the game and place your pieces by choosing the column number until you get a row (horizontally, vertically, diagonally) of 4 pieces to win!");
                         } else
                         if (menuChoice == 1) {
                                 System.out.print("\nPick a mode:");
