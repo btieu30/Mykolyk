@@ -194,7 +194,9 @@ public class Woo {
         }
 
         public void checkWin(Player cheese) {
-          //increment wins and losses - Gamer.java
+                
+                //increment wins and losses - Gamer.java
+                
                 for (int r = 0; r < _rows; r++) {
                   for (int c = 0; c < _columns - 3; c++) {
                     if ( (_board[r][c] == cheese._color) &&
