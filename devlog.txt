@@ -3,7 +3,7 @@ Brianna Tieu
 Fang Min Chen
 pd 06
 ---------------------
-Tiles of Piano 3
+Connect 4 Life
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 USAGE:
@@ -102,4 +102,11 @@ Create and upload UML diagram.
 Fang :: Updated UML diagram; Added v4 (Working customization in singlePlay(); Updated Player + subclasses files)
 Bri :: Add v3 of Woo.java (Working "drop" of pieces as columns are chosen, updated board as gameplay continues); Update README; Add flowchart
 Both :: Create v2 of Woo.java and helper classes (Bot, Gamer, Player)
+==============================================================
+
+2022-01-20
+--------------------------------------------------------------
+Fang :: 
+Bri :: Create v5 of Woo.java and edit Bot.java (Add customization to Bots + v5 checks for hoizontal and vertical matches
+Both :: 
 ==============================================================
