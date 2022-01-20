@@ -91,7 +91,7 @@ Both :: Further deliberation of project objective; Came to the decision that we 
 
 2022-01-18
 --------------------------------------------------------------
-Fang :: 
+Fang :: Tested faults in current code
 Bri :: Add column nums to v1; update .gitignore
 Both :: Create v1 of Woo.java with new instance variable and display() method to print the current state of the board.
 Create and upload UML diagram.
@@ -99,7 +99,7 @@ Create and upload UML diagram.
 
 2022-01-19
 --------------------------------------------------------------
-Fang :: Updated UML diagram; Added v4 (Working "Color" selection)
+Fang :: Updated UML diagram; Added v4 (Working "Color" selection; Updated Player + subclasses)
 Bri :: Add v3 of Woo.java; update README
 Both :: Create v2 of Woo.java and helper classes (Bot, Gamer, Player)
 ==============================================================
