@@ -84,30 +84,37 @@ Both :: More brainstorming; created vision on paper
 
 2022-01-17
 --------------------------------------------------------------
-Fang :: Revise Propro; create primitive version v0 of Woo.java (Working welcome message and mode selection)
+Fang :: Revise Propro; create primitive version v0 of Woo.java (Working welcome
+        message and mode selection)
 Bri :: Creation and upload team flag; draft Propro
-Both :: Further deliberation of project objective; Came to the decision that we will create Connect 4 instead of the Piano Tiles
+Both :: Further deliberation of project objective; Came to the decision that we
+        will create Connect 4 instead of the Piano Tiles
 ==============================================================
 
 2022-01-18
 --------------------------------------------------------------
 Fang :: Tested faults in current code
 Bri :: Add column nums to v1; update .gitignore
-Both :: Create v1 of Woo.java with new instance variable and display() method to print the current state of the board.
-Create and upload UML diagram.
+Both :: Create v1 of Woo.java with new instance variable and display() method to
+        print the current state of the board. Create and upload UML diagram.
 ==============================================================
 
 2022-01-19
 --------------------------------------------------------------
-Fang :: Updated UML diagram; Added v4 (Working customization in singlePlay(); Updated Player + subclasses files)
-Bri :: Add v3 of Woo.java (Working "drop" of pieces as columns are chosen, updated board as gameplay continues); Update README; Add flowchart
+Fang :: Updated UML diagram; Added v4 (Working customization in singlePlay();
+        Updated Player + subclasses files)
+Bri :: Add v3 of Woo.java (Working "drop" of pieces as columns are chosen,
+       updated board as gameplay continues); Update README; Add flowchart
 Both :: Create v2 of Woo.java and helper classes (Bot, Gamer, Player)
 ==============================================================
 
 2022-01-20
 --------------------------------------------------------------
-Fang :: Create v6 and v7 () 
-Bri :: Create v5 of Woo.java and edit Bot.java (Add customization to Bots + v5 checks for hoizontal and vertical matches w/ updated directions
-Create v8 (Create column limits)
-Both :: 
+Fang :: Create v6 and v7 (edited Player customization and edit directions to
+        make more organized and explicit)
+Bri :: Create v5 of Woo.java and edit Bot.java (Add customization to Bots + v5
+       checks for horizontal and vertical matches w/ updated directions
+       Create v8 (Added column limits, multiplayer customization), Upload new
+       and improved flowchart
+Both ::
 ==============================================================
