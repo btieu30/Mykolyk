@@ -184,9 +184,30 @@ public class Woo {
 
                 Gamer Fang = new Gamer();
                 Gamer Bri = new Gamer();
+                Scanner s = new Scanner(System.in);
+                String pickColor = "";
 
                 int _maxTurns = _rows * _columns;
                 int turn = 0;
+                while (true) {
+                        System.out.print("\nPlayer 1 -- Pick a character of your choice: ");
+                        pickColor = s.next();
+
+                        if (!(pickColor.equals("")) && pickColor.length() == 1) {
+                                Fang.setColor(pickColor);
+                        } else {
+                                System.out.print("\nThat's not a character. Try again!");
+                        }
+                        System.out.print("\nPlayer 2 -- Pick a character of your choice: ");
+                        pickColor = s.next();
+
+                        if (!(pickColor.equals("")) && pickColor.length() == 1) {
+                                Bri.setColor(pickColor);
+                                break;
+                        } else {
+                                System.out.print("\nThat's not a character. Try again!");
+                        }
+                }
                 while (turn <= _maxTurns) { //and while there is no winner
                     System.out.println("\nPlayer 1, make your move.");
                     play(Fang);

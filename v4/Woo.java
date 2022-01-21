@@ -10,7 +10,7 @@ public class Woo {
         private String[][] _board;
         private int _rows;
         private int _columns;
-        private String _winner;
+        private String _winner = "";
 
         public Woo() {
 
@@ -116,12 +116,12 @@ public class Woo {
                 }
 
 
-        public void botPlay() {
+        public void botPlay(Bot yogurt) {
 
                 int _selection = (int) ((_columns) * Math.random() );
                 for (int i = _rows - 1; i >= 0; i--) {
                         if (_board[i][_selection] == " ") {
-                                _board[i][_selection] = "B";
+                                _board[i][_selection] = yogurt.color();
                                 break;
                         }
                 }
@@ -133,6 +133,7 @@ public class Woo {
                 int _maxTurns = _rows * _columns;
                 int turn = 0;
                 Scanner s = new Scanner(System.in);
+                Bot poggers = new Bot();
 
                 System.out.print("\nWell well, I see that you are alone. What doest thou call themselves? ");
                 System.out.print("\nType your name: ");
@@ -141,16 +142,17 @@ public class Woo {
                 System.out.print("\nPick a character of your choice: ");
                 Mykolyk.setColor((s.next()));
 
-                while (turn <= _maxTurns) { //and while there is no winner
+                while ((turn <= _maxTurns) && (_winner.compareTo("") == 0) ) { //and while there is no winner
                     System.out.println("\n" + Mykolyk.name() + ", make your move by choosing your column of destiny.");
                     play(Mykolyk);
+                    checkWin(Mykolyk);
                     turn++;
-                    botPlay();
+                    botPlay(poggers);
+                    checkWin(poggers);
                     turn++;
                 }
 
         }
-
 
         public void multiPlay() {
 
@@ -167,9 +169,37 @@ public class Woo {
                     play(Bri);
                     turn++;
                 }
-        
+
         }
 
+        public void checkWin(Player cheese) {
+          //increment wins and losses - Gamer.java
+                for (int r = 0; r < _rows; r++) {
+                  for (int c = 0; c < _columns - 3; c++) {
+                    if ( (_board[r][c] == cheese._color) &&
+                       (_board[r][c+1] == cheese._color) &&
+                       (_board[r][c+2] == cheese._color) &&
+                       (_board[r][c+3] == cheese._color) ) {
+                         _winner = cheese._color;
+                         display();
+                         System.out.println(_winner + " has claimed victory!");
+                       }
+                  }
+                }
+
+                for (int r = 0; r < _rows - 3; r++) {
+                  for (int c = 0; c < _columns; c++) {
+                    if ( (_board[r][c] == cheese._color) &&
+                       (_board[r+1][c] == cheese._color) &&
+                       (_board[r+2][c] == cheese._color) &&
+                       (_board[r+3][c] == cheese._color) ) {
+                         _winner = cheese._color;
+                         display();
+                         System.out.println(_winner + " has claimed victory!");
+                       }
+                  }
+                }
+        }
 
         public static void main(String[] args) {
                 Woo game = new Woo();
