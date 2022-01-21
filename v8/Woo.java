@@ -182,13 +182,21 @@ public class Woo {
 
         public void multiPlay() {
 
-                Gamer Fang = new Gamer();
-                Gamer Bri = new Gamer();
                 Scanner s = new Scanner(System.in);
                 String pickColor = "";
 
                 int _maxTurns = _rows * _columns;
                 int turn = 0;
+
+
+                System.out.print("\nPlayer 1, what doest thou call themselves? ");
+                System.out.print("\nType your name: ");
+                Gamer Fang = new Gamer(s.next(), "Temp");
+
+                System.out.print("\nPlayer 2, what doest thou call themselves? ");
+                System.out.print("\nType your name: ");
+                Gamer Bri = new Gamer(s.next(), "Temp");
+
                 while (true) {
                         System.out.print("\nPlayer 1 -- Pick a character of your choice: ");
                         pickColor = s.next();
@@ -208,12 +216,14 @@ public class Woo {
                                 System.out.print("\nThat's not a character. Try again!");
                         }
                 }
-                while (turn <= _maxTurns) { //and while there is no winner
-                    System.out.println("\nPlayer 1, make your move.");
+                while ((turn <= _maxTurns) && _winner.compareTo("") == 0) { //fix winner declaration
+                    System.out.println("\n" + Fang.name() + ", make your move by choosing your column of destiny.");
                     play(Fang);
+                    checkWin(Fang);
                     turn++;
-                    System.out.println("\nPlayer 2, make your move.");
+                    System.out.println("\n" + Bri.name() + ", make your move by choosing your column of destiny.");
                     play(Bri);
+                    checkWin(Bri);
                     turn++;
                 }
 
