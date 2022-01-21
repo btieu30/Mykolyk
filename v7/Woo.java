@@ -113,12 +113,17 @@ public class Woo {
                         display();
                         int _selection = s.nextInt();
                         if (_selection < 0 || _selection >= _columns) {
-                                System.err.print("Invalid Input. Please try again.");
+                                System.err.print("*** Invalid Input. Please try again. ***");
                         } else {
                                 for (int i = _rows - 1; i >= 0; i--) {
                                         if (_board[i][_selection] == " ") {
                                                 _board[i][_selection] = hum.color(); //change with player's color
                                                 break;
+                                        }
+                                        if (_board[0][_selection] != " ") {
+                                                System.err.print("\n*** Selected column is full. Try picking another column. ***\n");
+                                                break;
+
                                         }
                                 }
                         }
@@ -153,23 +158,29 @@ public class Woo {
                 while (true) {
                         System.out.print("\nPick a character of your choice: ");
                         pickColor = s.next();
-                        
+
                         if (!(pickColor.equals("")) && pickColor.length() == 1) {
                                 Mykolyk.setColor(pickColor);
                                 break;
                         } else {
-                                System.out.print("\nThat's not a character. Try again");
-                        }  
+                                System.out.print("\nThat's not a character. Try again!");
+                        }
                 }
-                
+
 
                 while ((turn <= _maxTurns) && (_winner.compareTo("") == 0) ) { //and while there is no winner
                     System.out.println("\n" + Mykolyk.name() + ", make your move by choosing your column of destiny.");
                     play(Mykolyk);
                     checkWin(Mykolyk);
+                    if (_winner == Mykolyk._color) {
+                      break;
+                    }
                     turn++;
                     botPlay(poggers);
                     checkWin(poggers);
+                    if (_winner == poggers._color){
+                      break;
+                    }
                     turn++;
                 }
 
@@ -177,26 +188,63 @@ public class Woo {
 
         public void multiPlay() {
 
-                Gamer Fang = new Gamer();
-                Gamer Bri = new Gamer();
+                Scanner s = new Scanner(System.in);
+                String pickColor = "";
 
                 int _maxTurns = _rows * _columns;
                 int turn = 0;
-                while (turn <= _maxTurns) { //and while there is no winner
-                    System.out.println("\nPlayer 1, make your move.");
+
+
+                System.out.print("\nPlayer 1, what doest thou call themselves? ");
+                System.out.print("\nType your name: ");
+                Gamer Fang = new Gamer(s.next(), "Temp");
+
+                System.out.print("\nPlayer 2, what doest thou call themselves? ");
+                System.out.print("\nType your name: ");
+                Gamer Bri = new Gamer(s.next(), "Temp");
+
+                while (true) {
+                        System.out.print("\nPlayer 1 -- Pick a character of your choice: ");
+                        pickColor = s.next();
+
+                        if (!(pickColor.equals("")) && pickColor.length() == 1) {
+                                Fang.setColor(pickColor);
+                        } else {
+                                System.out.print("\nThat's not a character. Try again!");
+                        }
+                        System.out.print("\nPlayer 2 -- Pick a character of your choice: ");
+                        pickColor = s.next();
+
+                        if (!(pickColor.equals("")) && pickColor.length() == 1) {
+                                Bri.setColor(pickColor);
+                                break;
+                        } else {
+                                System.out.print("\nThat's not a character. Try again!");
+                        }
+                }
+                while ((turn <= _maxTurns) && _winner.compareTo("") == 0) { //fix winner declaration
+                    System.out.println("\n" + Fang.name() + ", make your move by choosing your column of destiny.");
                     play(Fang);
+                    checkWin(Fang);
+                    if (_winner == Fang._color) {
+                      break;
+                    }
                     turn++;
-                    System.out.println("\nPlayer 2, make your move.");
+                    System.out.println("\n" + Bri.name() + ", make your move by choosing your column of destiny.");
                     play(Bri);
+                    checkWin(Bri);
+                    if (_winner == Bri._color) {
+                      break;
+                    }
                     turn++;
                 }
 
         }
 
         public void checkWin(Player cheese) {
-                
+
                 //increment wins and losses - Gamer.java
-                
+
                 for (int r = 0; r < _rows; r++) {
                   for (int c = 0; c < _columns - 3; c++) {
                     if ( (_board[r][c] == cheese._color) &&
@@ -206,6 +254,7 @@ public class Woo {
                          _winner = cheese._color;
                          display();
                          System.out.println(_winner + " has claimed victory!");
+                         break;
                        }
                   }
                 }
@@ -219,6 +268,7 @@ public class Woo {
                          _winner = cheese._color;
                          display();
                          System.out.println(_winner + " has claimed victory!");
+                         break;
                        }
                   }
                 }
