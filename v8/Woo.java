@@ -220,10 +220,16 @@ public class Woo {
                     System.out.println("\n" + Fang.name() + ", make your move by choosing your column of destiny.");
                     play(Fang);
                     checkWin(Fang);
+                    if (_winner == Fang._color) {
+                      break;
+                    }
                     turn++;
                     System.out.println("\n" + Bri.name() + ", make your move by choosing your column of destiny.");
                     play(Bri);
                     checkWin(Bri);
+                    if (_winner == Bri._color) {
+                      break;
+                    }
                     turn++;
                 }
 
