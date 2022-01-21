@@ -172,9 +172,15 @@ public class Woo {
                     System.out.println("\n" + Mykolyk.name() + ", make your move by choosing your column of destiny.");
                     play(Mykolyk);
                     checkWin(Mykolyk);
+                    if (_winner == Mykolyk._color) {
+                      break;
+                    }
                     turn++;
                     botPlay(poggers);
                     checkWin(poggers);
+                    if (_winner == poggers._color){
+                      break;
+                    }
                     turn++;
                 }
 
