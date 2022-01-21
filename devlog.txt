@@ -5,23 +5,6 @@ pd 06
 ---------------------
 Connect 4 Life
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-USAGE:
-* Replace all fields, angle brackets included, with specified info.
-  eg, pd <pd#> --> pd 3
-* Delete this instruction block once all teammates understand usage.
-
-devlog--
-Use keyboard shortcut to jump to end,
- replicate entry template,
- modify appropriately.
-
-zone of reflection--
-Flesh out each category whenever necessary, appropriate.
- Need not be fully filled in until end of project,
- but best done as you go along.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 /////////// Zone of Reflection \\\\\\\\\\\
 ------------------------------------------
@@ -114,7 +97,14 @@ Fang :: Create v6 and v7 (edited Player customization and edit directions to
         make more organized and explicit)
 Bri :: Create v5 of Woo.java and edit Bot.java (Add customization to Bots + v5
        checks for horizontal and vertical matches w/ updated directions
-       Create v8 (Added column limits, multiplayer customization), Upload new
+       Modified v7 (Added column limits, multiplayer customization), Upload new
        and improved flowchart
 Both ::
+==============================================================
+
+2022-01-21
+--------------------------------------------------------------
+Fang :: <Thing member did.>
+Bri :: <Thing member did.>
+Both :: Discovery and analysis of TerminallyIll.java; Created v8 and re-situated the board to top left corner
 ==============================================================
