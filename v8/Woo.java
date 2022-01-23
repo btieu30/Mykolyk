@@ -171,11 +171,11 @@ public class Woo {
                                 for (int i = _rows - 1; i >= 0; i--) {
                                         if (_board[i][_selection] == " ") {
                                                 _board[i][_selection] = hum.color(); //change with player's color
-                                                break;
+                                                break; // doesn't display. bug with the CLEAR_SCREEN?
                                         }
                                         if (_board[0][_selection] != " ") {
-                                                System.err.print("\n*** Selected column is full. Try picking another column. ***\n");
-                                                break;
+                                                System.err.println("\n*** Selected column is full. Try picking another column. ***\n");
+                                                break; // bug w the column full message not displaying + does the play make sure turn does not increase if appropriate column isnt picked?
 
                                         }
                                 }
@@ -192,6 +192,9 @@ public class Woo {
                                 _board[i][_selection] = yogurt.color();
                                 break;
                         }
+                        // if (_board[0][_selection] != " ") {
+                        //         botPlay(yogurt);
+                        // } // if a column is full, bot must select another
                 }
         }
 
@@ -235,6 +238,9 @@ public class Woo {
                       break;
                     }
                     turn++;
+                    if (turn == _maxTurns) {
+                      System.out.println("All players have occupied all spots on the board without any matches. There is no winner!");
+                    }
                 }
 
         }
@@ -318,6 +324,34 @@ public class Woo {
                        (_board[r+1][c] == cheese._color) &&
                        (_board[r+2][c] == cheese._color) &&
                        (_board[r+3][c] == cheese._color) ) {
+                         _winner = cheese._color;
+                         display();
+                         System.out.println(_winner + " has claimed victory!");
+                         break;
+                       }
+                  }
+                }
+
+                for (int r = 0; r < _rows-3; r++) {
+                  for (int c = 0; c < _columns - 3; c++) {
+                    if ( (_board[r][c] == cheese._color) &&
+                       (_board[r+1][c+1] == cheese._color) &&
+                       (_board[r+2][c+2] == cheese._color) &&
+                       (_board[r+3][c+3] == cheese._color) ) {
+                         _winner = cheese._color;
+                         display();
+                         System.out.println(_winner + " has claimed victory!");
+                         break;
+                       }
+                  }
+                }
+
+                for (int r = 3; r < _rows; r++) {
+                  for (int c = 0; c < _columns - 3; c++) {
+                    if ( (_board[r][c] == cheese._color) &&
+                       (_board[r-1][c+1] == cheese._color) &&
+                       (_board[r-2][c+2] == cheese._color) &&
+                       (_board[r-3][c+3] == cheese._color) ) {
                          _winner = cheese._color;
                          display();
                          System.out.println(_winner + " has claimed victory!");

@@ -5,21 +5,31 @@ pd 06
 ---------------------
 Connect 4 Life
 
-
 /////////// Zone of Reflection \\\\\\\\\\\
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow we so BOSS bc...
+0: Algorithm with finding diagonal wins was successfully coded by imagining the
+   board as stairs! The diagonal upwards resembles a person going up a flight of
+   stairs and as they go up, they move to the right one and go up by one like so:
+   (please do not flame such representation of a staircase)
+       __|
+     __|
+   __|
+   |
+   We connected this analogy to the behavior of matrices and their indices.
+1:
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
+0: After successfully implementing our CLEAR_SCREEN code (inspired by
+   TerminallyIll.java), we experienced bugs that don't display specific messages
+   when needed (e.g if a player inputs an invalid column selection)
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow! oo!...
+0: We can make our terminal and board display colorful! (credit to
+   TerminallyIll.java)
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -106,5 +116,14 @@ Both ::
 --------------------------------------------------------------
 Fang :: <Thing member did.>
 Bri :: <Thing member did.>
-Both :: Discovery and analysis of TerminallyIll.java; Created v8 and re-situated the board to top left corner
+Both :: Discovery and analysis of TerminallyIll.java; Created v8 and re-situated
+        the board to top left corner
+==============================================================
+
+2022-01-22
+--------------------------------------------------------------
+Fang :: <Thing member did.>
+Bri :: Add code for diagonals into v8, discovered several bugs after
+       CLEAR_SCREEN implementation
+Both :: <Thing everyone did.>
 ==============================================================
