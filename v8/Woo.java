@@ -142,6 +142,7 @@ public class Woo {
 
         public void display() {
                 System.out.println(go(1,1));
+                System.out.println(CLEAR_SCREEN);
                 for (int col = 0; col < _columns; col++) {
                          System.out.print ("  " + col + " ");
                 }
@@ -161,9 +162,9 @@ public class Woo {
         public void play(Gamer hum) {
 
                 Scanner s = new Scanner(System.in);
-                        System.out.println(CLEAR_SCREEN);
-                        System.out.println("Thinker " + hum._name + ", make your move by choosing your column of destiny!\n");
+                        // System.out.println(CLEAR_SCREEN);
                         display();
+                        System.out.println("Thinker " + hum._name + ", make your move by choosing your column of destiny!\n");
                         System.out.print("Move: ");
                         int _selection = s.nextInt();
                         if (_selection < 0 || _selection >= _columns) {
