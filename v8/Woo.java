@@ -89,7 +89,7 @@ public class Woo {
                 System.out.println(msg);
 
                 while (true) {
-
+                  //menu
                         msg = "\n====================================\n";
                         msg += "\nMENU";
                         msg += "\n0: How-To-Play";
@@ -105,6 +105,7 @@ public class Woo {
                         System.out.println(CLEAR_SCREEN);
 
                         if (menuChoice == 0) {
+                          //directions
                                 msg = "\n====================================\n";
                                 msg += "\nDirections: ";
                                 msg += "\n- Begin by choosing your gamemode: single player or multiplayer.";
@@ -117,6 +118,7 @@ public class Woo {
 
                         } else
                         if (menuChoice == 1) {
+                          //modeChoice
                                 System.out.print("\nPick a mode:");
                                 System.out.print("\n0: Single as a Pringle");
                                 System.out.println("\n1: Duo Player");
@@ -141,8 +143,9 @@ public class Woo {
 
 
         public void display() {
+          //display game board
                 System.out.println(go(1,1));
-                System.out.println(CLEAR_SCREEN);
+                System.out.println(CLEAR_SCREEN); //clear screen of menu
                 for (int col = 0; col < _columns; col++) {
                          System.out.print ("  " + col + " ");
                 }
@@ -155,35 +158,37 @@ public class Woo {
                         System.out.print("|\n");
                 }
                 System.out.println("=========================\n");
-
         }
 
 
         public void play(Gamer hum) {
 
+                int _selection;
+
                 Scanner s = new Scanner(System.in);
-                        // System.out.println(CLEAR_SCREEN);
-                        display();
-                        System.out.println("Thinker " + hum._name + ", make your move by choosing your column of destiny!\n");
-                        System.out.print("Move: ");
-                        int _selection = s.nextInt();
-                        if (_selection < 0 || _selection >= _columns) {
-                                System.out.println("*** Invalid Input. Please try again. ***"); // doesn't display. bug with the CLEAR_SCREEN?
-                        } else {
-                                for (int i = _rows - 1; i >= 0; i--) {
-                                        if (_board[i][_selection] == " ") {
-                                                _board[i][_selection] = hum.color(); //change with player's color
-                                                break;
-                                        }
-                                      }
-                                        if (_board[0][_selection] != " ") {
-                                                System.out.println("\n*** Selected column is full. Try picking another column. ***");
-                                                // bug w the column full message not displaying + does the play make sure turn does not increase if appropriate column isnt picked?
-
-                                }
+                display(); //display board w each play
+                System.out.println("Thinker " + hum._name + ", make your move by choosing your column of destiny!");
+                System.out.print("Move: ");
+                while (true) {
+                        _selection = s.nextInt();
+                        if (_selection < 0 || _selection > _columns - 1) {
+                          System.out.print("\n*** Invalid Input. Please try again. ***\n");
+                          System.out.print("Move: ");
+                          continue; //jump to next
                         }
-
-                }
+                        if (_board[0][_selection] != " ") {
+                          System.out.print("\n*** Selected column is full. Try picking another column. ***\n");
+                          System.out.print("Move: ");
+                           continue; //jump to next
+                        }
+                        for (int i = _rows - 1; i >= 0; i--) {
+                          if (_board[i][_selection] == " ") {
+                            _board[i][_selection] = hum.color(); //change with player's color
+                            return; //exit loop + return void
+                          }
+                        }
+                  }
+            }
 
 
         public void botPlay(Bot yogurt) {
@@ -227,26 +232,25 @@ public class Woo {
                 }
 
 
-                while ((turn <= _maxTurns) && (_winner.compareTo("") == 0) ) {
-                    //System.out.println("\n" + Mykolyk.name() + ", make your move by choosing your column of destiny.");
+                while ((_winner ==  "") && (turn <= _maxTurns))  {
                     play(Mykolyk);
+                    turn++;
                     checkWin(Mykolyk);
                     if (_winner == Mykolyk._color) {
                       break;
                     }
-                    turn++;
                     botPlay(poggers);
+                    turn++;
                     checkWin(poggers);
                     if (_winner == poggers._color){
                       break;
                     }
-                    turn++;
-                    if (turn == _maxTurns) {
-                      System.out.println("All players have occupied all spots on the board without any matches. There is no winner!");
-                    }
                 }
-
+                if (turn > _maxTurns) {
+                  System.out.println("All players have occupied all spots on the board without any matches. There is no winner!");
+                }
         }
+
 
         public void multiPlay() {
 
@@ -286,24 +290,25 @@ public class Woo {
                         }
                       }
 
-                while ((turn <= _maxTurns) && _winner.compareTo("") == 0) { //fix winner declaration
+                while ((_winner == "") && (turn <= _maxTurns)) { //fix winner declaration
                   System.out.println("\n" + Fang.name() + ", make your move by choosing your column of destiny.");
                     play(Fang);
+                    turn++;
                     checkWin(Fang);
                     if (_winner == Fang._color) {
                       break;
                     }
-                    turn++;
                     System.out.println("\n" + Bri.name() + ", make your move by choosing your column of destiny.");
                     play(Bri);
+                    turn++;
                     checkWin(Bri);
                     if (_winner == Bri._color) {
                       break;
                     }
-                    turn++;
                 }
 
         }
+
 
         public void checkWin(Player cheese) {
 
@@ -365,6 +370,7 @@ public class Woo {
                   }
                 }
         }
+
 
         public static void main(String[] args) {
                 Woo game = new Woo();
