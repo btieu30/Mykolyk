@@ -3,7 +3,7 @@ public class Player {
   protected String _color;
 
   public Player() {
-    _color = "B";
+    _color = "";
   }
 
   public void setColor( String newColor ) {

@@ -2,7 +2,7 @@ public class Gamer extends Player {
 
   private int _wins;
   private int _losses;
-  private String _name;
+  protected String _name;
 
   public Gamer() {
     _wins = 0;

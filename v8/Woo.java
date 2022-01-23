@@ -102,6 +102,7 @@ public class Woo {
                         System.out.println(msg);
                         System.out.print("Selection: ");
                         menuChoice = s.nextInt();
+                        System.out.println(CLEAR_SCREEN);
 
                         if (menuChoice == 0) {
                                 msg = "\n====================================\n";
@@ -140,7 +141,6 @@ public class Woo {
 
 
         public void display() {
-
                 System.out.println(go(1,1));
                 for (int col = 0; col < _columns; col++) {
                          System.out.print ("  " + col + " ");
@@ -162,22 +162,23 @@ public class Woo {
 
                 Scanner s = new Scanner(System.in);
                         System.out.println(CLEAR_SCREEN);
+                        System.out.println("Thinker " + hum._name + ", make your move by choosing your column of destiny!\n");
                         display();
                         System.out.print("Move: ");
                         int _selection = s.nextInt();
                         if (_selection < 0 || _selection >= _columns) {
-                                System.err.print("*** Invalid Input. Please try again. ***");
+                                System.out.println("*** Invalid Input. Please try again. ***"); // doesn't display. bug with the CLEAR_SCREEN?
                         } else {
                                 for (int i = _rows - 1; i >= 0; i--) {
                                         if (_board[i][_selection] == " ") {
                                                 _board[i][_selection] = hum.color(); //change with player's color
-                                                break; // doesn't display. bug with the CLEAR_SCREEN?
+                                                break;
                                         }
+                                      }
                                         if (_board[0][_selection] != " ") {
-                                                System.err.println("\n*** Selected column is full. Try picking another column. ***\n");
-                                                break; // bug w the column full message not displaying + does the play make sure turn does not increase if appropriate column isnt picked?
+                                                System.out.println("\n*** Selected column is full. Try picking another column. ***");
+                                                // bug w the column full message not displaying + does the play make sure turn does not increase if appropriate column isnt picked?
 
-                                        }
                                 }
                         }
 
@@ -190,10 +191,14 @@ public class Woo {
                 for (int i = _rows - 1; i >= 0; i--) {
                         if (_board[i][_selection] == " ") {
                                 _board[i][_selection] = yogurt.color();
-                                break; //// if a column is full, make it so that bot must select another
+                                break;
                         }
+                        if (_board[0][_selection] != " ") {
+                          botPlay(yogurt);
+                          break;
+                        }
+                    }
                 }
-        }
 
 
         public void singlePlay() {
@@ -222,7 +227,7 @@ public class Woo {
 
 
                 while ((turn <= _maxTurns) && (_winner.compareTo("") == 0) ) {
-                    System.out.println("\n" + Mykolyk.name() + ", make your move by choosing your column of destiny.");
+                    //System.out.println("\n" + Mykolyk.name() + ", make your move by choosing your column of destiny.");
                     play(Mykolyk);
                     checkWin(Mykolyk);
                     if (_winner == Mykolyk._color) {
@@ -253,33 +258,35 @@ public class Woo {
 
                 System.out.print("\nPlayer 1, what doest thou call themselves? ");
                 System.out.print("\nType your name: ");
-                Gamer Fang = new Gamer(s.next(), "Temp");
+                Gamer Fang = new Gamer(s.next(), "");
 
                 System.out.print("\nPlayer 2, what doest thou call themselves? ");
                 System.out.print("\nType your name: ");
-                Gamer Bri = new Gamer(s.next(), "Temp");
+                Gamer Bri = new Gamer(s.next(), "");
 
-                while (true) {
-                        System.out.print("\nPlayer 1 -- Pick a character of your choice: ");
+                while (Fang._color == "") {
+                        System.out.print("\n" + Fang._name + " -- Pick a character of your choice: ");
                         pickColor = s.next();
 
                         if (!(pickColor.equals("")) && pickColor.length() == 1) {
                                 Fang.setColor(pickColor);
-                        } else {
-                                System.out.print("\nThat's not a character. Try again!");
-                        }
-                        System.out.print("\nPlayer 2 -- Pick a character of your choice: ");
-                        pickColor = s.next();
-
-                        if (!(pickColor.equals("")) && pickColor.length() == 1) {
-                                Bri.setColor(pickColor);
                                 break;
                         } else {
                                 System.out.print("\nThat's not a character. Try again!");
                         }
-                }
+                      }
+                while (Bri._color == "") {
+                          System.out.print("\n" + Bri._name + " -- Pick a character of your choice: ");
+                          pickColor = s.next();
+                        if (!(pickColor.equals("")) && pickColor.length() == 1) {
+                                Bri.setColor(pickColor);
+                        } else {
+                                System.out.print("\nThat's not a character. Try again!");
+                        }
+                      }
+
                 while ((turn <= _maxTurns) && _winner.compareTo("") == 0) { //fix winner declaration
-                    System.out.println("\n" + Fang.name() + ", make your move by choosing your column of destiny.");
+                  System.out.println("\n" + Fang.name() + ", make your move by choosing your column of destiny.");
                     play(Fang);
                     checkWin(Fang);
                     if (_winner == Fang._color) {
@@ -375,5 +382,4 @@ public class Woo {
                 ====================================== */
 
         }
-
 }
