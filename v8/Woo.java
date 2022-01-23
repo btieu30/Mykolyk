@@ -190,11 +190,8 @@ public class Woo {
                 for (int i = _rows - 1; i >= 0; i--) {
                         if (_board[i][_selection] == " ") {
                                 _board[i][_selection] = yogurt.color();
-                                break;
+                                break; //// if a column is full, make it so that bot must select another
                         }
-                        // if (_board[0][_selection] != " ") {
-                        //         botPlay(yogurt);
-                        // } // if a column is full, bot must select another
                 }
         }
 
@@ -224,7 +221,7 @@ public class Woo {
                 }
 
 
-                while ((turn <= _maxTurns) && (_winner.compareTo("") == 0) ) { //and while there is no winner
+                while ((turn <= _maxTurns) && (_winner.compareTo("") == 0) ) {
                     System.out.println("\n" + Mykolyk.name() + ", make your move by choosing your column of destiny.");
                     play(Mykolyk);
                     checkWin(Mykolyk);
