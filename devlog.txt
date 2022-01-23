@@ -18,13 +18,15 @@ OBSTACLES OVERCOME
    __|
    |
    We connected this analogy to the behavior of matrices and their indices.
-1:
+1: After successfully implementing our CLEAR_SCREEN code (inspired by
+   TerminallyIll.java), we experienced bugs that don't display specific messages
+   when needed (e.g if a player inputs an invalid column selection)
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-0: After successfully implementing our CLEAR_SCREEN code (inspired by
-   TerminallyIll.java), we experienced bugs that don't display specific messages
-   when needed (e.g if a player inputs an invalid column selection)
+0: After successfully implementing the color code to change the background of
+player's pieces, we're experiencing issues with the winner declaration, likely
+because the user's color is not the only element present in the index.
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -125,5 +127,13 @@ Both :: Discovery and analysis of TerminallyIll.java; Created v8 and re-situated
 Fang :: <Thing member did.>
 Bri :: Add code for diagonals into v8, discovered several bugs after
        CLEAR_SCREEN implementation
+Both :: <Thing everyone did.>
+==============================================================
+
+2022-01-23
+--------------------------------------------------------------
+Fang :: <Thing member did.>
+Bri :: Fix bugs of CLEAR_SCREEN, create v9 to add colors into board, discovered
+       bugs the colors led to in winner declaration
 Both :: <Thing everyone did.>
 ==============================================================
