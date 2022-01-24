@@ -7,7 +7,6 @@ public class Gamer extends Player {
     _wins = 0;
     _losses = 0;
     _name = "Gamer";
-    _colorBg = 66;
   }
 
   public Gamer(String tag, String newLetter) {

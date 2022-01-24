@@ -6,7 +6,7 @@ public class Player {
 
   public Player() {
     _letter = "";
-    _colorBg = 36 + 30;
+    _colorBg = 30;
   }
 
   public String name() {
