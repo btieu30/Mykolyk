@@ -305,6 +305,9 @@ public class Woo {
                         } 
                     }
 
+                    _winner = "";
+                    turn = 0;
+
                 }
         }
 
