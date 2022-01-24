@@ -201,7 +201,7 @@ public class Woo {
                 int _selection = (int) ((_columns) * Math.random() );
                 for (int i = _rows - 1; i >= 0; i--) {
                         if (_board[i][_selection] == " ") {
-                                _board[i][_selection] = yogurt.letter();
+                                _board[i][_selection] = color(BRIGHT,WHITE,background(yogurt.Bg())) + yogurt.letter() + RESET;
                                 break;
                         }
                         if (_board[0][_selection] != " ") {
@@ -217,7 +217,7 @@ public class Woo {
                 int _maxTurns = _rows * _columns;
                 int turn = 0;
                 Scanner s = new Scanner(System.in);
-                Bot poggers = new Bot();
+                Bot Poggers = new Bot();
                 String pickChar = "";
                 int pickBg;
 
@@ -257,10 +257,10 @@ public class Woo {
                     if (_winner == Mykolyk.letter()) {
                       break;
                     }
-                    botPlay(poggers);
-                    checkWin(poggers);
+                    botPlay(Poggers);
+                    checkWin(Poggers);
                     turn++;
-                    if (_winner == poggers.letter()){
+                    if (_winner == Poggers.letter()){
                       break;
                     }
                 }
@@ -331,7 +331,7 @@ public class Woo {
         public void checkWin(Player cheese) {
 
                 //increment wins and losses - Gamer.java
-                String check = cheese.letter();
+                String check = color(BRIGHT,WHITE,background(cheese.Bg())) + cheese.letter() + RESET;
 
                 for (int r = 0; r < _rows; r++) {
                   for (int c = 0; c < _columns - 3; c++) {
