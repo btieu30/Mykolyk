@@ -1,18 +1,32 @@
 public class Player {
 
-  protected String _color;
+  protected String _letter;
   protected String _name;
+  protected int _colorBg;
 
   public Player() {
-    _color = "";
+    _letter = "";
+    _colorBg = 36 + 30;
   }
 
-  public void setColor( String newColor ) {
-    _color = newColor;
+  public String name() {
+    return _name;
   }
 
-  public String color() {
-    return _color;
+  public void setLetter( String letter ) {
+    _letter = letter;
+  }
+
+  public String letter() {
+    return _letter;
+  }
+
+    public void setBg ( int newBg ) {
+    _colorBg = newBg + 30;
+  }
+
+  public int Bg() {
+    return _colorBg;
   }
 
 }

@@ -120,10 +120,12 @@ public class Woo {
                         } else
                         if (menuChoice == 1) {
                           //modeChoice
-                                System.out.print("\nPick a mode:");
-                                System.out.print("\n0: Single as a Pringle");
-                                System.out.println("\n1: Duo Player");
-                                System.out.print("Selection: ");
+                                msg = "\n====================================\n";
+                                msg += "\nPick a mode:";
+                                msg += "\n0: Single as a Pringle";
+                                msg += "\n1: Duo Player";
+                                msg += "\nSelection: ";
+                                System.out.print(msg);
                                 modeChoice = s.nextInt();
                                 if (modeChoice == 0) {
                                         _mode = 1;
@@ -170,7 +172,7 @@ public class Woo {
 
                 Scanner s = new Scanner(System.in);
                 display(); //display board w each play
-                System.out.println("Thinker " + hum._name + ", make your move by choosing the number of your column of destiny!");
+                System.out.println("Thinker " + hum.name() + ", make your move by choosing the number of your column of destiny!");
                 System.out.print("Move: ");
                 while (true) {
                         _selection = s.nextInt();
@@ -186,7 +188,7 @@ public class Woo {
                         }
                         for (int i = _rows - 1; i >= 0; i--) {
                           if (_board[i][_selection] == " ") {
-                            _board[i][_selection] = color(BRIGHT,WHITE,background(hum.Bg())) + hum.color()+ RESET; //change with player's color
+                            _board[i][_selection] = color(BRIGHT,WHITE,background(hum.Bg())) + hum.letter() + RESET; //change with player's color
                             return; //exit loop + return void
                           }
                         }
@@ -199,7 +201,7 @@ public class Woo {
                 int _selection = (int) ((_columns) * Math.random() );
                 for (int i = _rows - 1; i >= 0; i--) {
                         if (_board[i][_selection] == " ") {
-                                _board[i][_selection] = yogurt.color();
+                                _board[i][_selection] = yogurt.letter();
                                 break;
                         }
                         if (_board[0][_selection] != " ") {
@@ -216,27 +218,28 @@ public class Woo {
                 int turn = 0;
                 Scanner s = new Scanner(System.in);
                 Bot poggers = new Bot();
-                String pickColor = "";
+                String pickChar = "";
                 int pickBg;
 
                 System.out.print("\nWell well, I see that you are alone. What doest thou call themselves? ");
                 System.out.print("\nType your name: ");
                 Gamer Mykolyk = new Gamer(s.next(), "Temp");
 
-                while (Mykolyk._color == "Temp") {
+                while (Mykolyk.letter() == "Temp") {
                         System.out.print("\nPick a character of your choice: ");
-                        pickColor = s.next();
+                        pickChar = s.next();
 
-                        if (!(pickColor.equals("")) && pickColor.length() == 1) {
-                                Mykolyk.setColor(pickColor);
+                        if (!(pickChar.equals("")) && pickChar.length() == 1) {
+                                Mykolyk.setLetter(pickChar);
                         } else {
                                 System.out.print("\nThat's not a character. Try again!");
                         }
                       }
 
                 while (Mykolyk._colorBg == 30) {
+                        System.out.print("\nColor Superiority");
+                        System.out.print("\n1: Red \n2: Green \n3: Yellow \n4: Blue \n5: Magenta");
                         System.out.print("\nPick a color of your choice: ");
-                        System.out.print("\n1: Red \t 2: Green \t 3: Yellow \t 4: Blue \t 5: Magenta\n");
                         pickBg = s.nextInt();
 
                         if(pickBg > 0 && pickBg < 6) {
@@ -251,13 +254,13 @@ public class Woo {
                     play(Mykolyk);
                     checkWin(Mykolyk);
                     turn++;
-                    if (_winner == Mykolyk._color) {
+                    if (_winner == Mykolyk.letter()) {
                       break;
                     }
                     botPlay(poggers);
                     checkWin(poggers);
                     turn++;
-                    if (_winner == poggers._color){
+                    if (_winner == poggers.letter()){
                       break;
                     }
                 }
@@ -270,7 +273,7 @@ public class Woo {
         public void multiPlay() {
 
                 Scanner s = new Scanner(System.in);
-                String pickColor = "";
+                String pickChar = "";
 
                 int _maxTurns = _rows * _columns;
                 int turn = 0;
@@ -284,22 +287,22 @@ public class Woo {
                 System.out.print("\nType your name: ");
                 Gamer Bri = new Gamer(s.next(), "");
 
-                while (Fang._color == "") {
-                        System.out.print("\n" + Fang._name + " -- Pick a character of your choice: ");
-                        pickColor = s.next();
+                while (Fang.letter() == "") {
+                        System.out.print("\n" + Fang.name() + " -- Pick a character of your choice: ");
+                        pickChar = s.next();
 
-                        if (!(pickColor.equals("")) && pickColor.length() == 1) {
-                                Fang.setColor(pickColor);
+                        if (!(pickChar.equals("")) && pickChar.length() == 1) {
+                                Fang.setLetter(pickChar);
                                 break;
                         } else {
                                 System.out.print("\nThat's not a character. Try again!");
                         }
                       }
-                while (Bri._color == "") {
-                          System.out.print("\n" + Bri._name + " -- Pick a character of your choice: ");
-                          pickColor = s.next();
-                        if (!(pickColor.equals("")) && pickColor.length() == 1) {
-                                Bri.setColor(pickColor);
+                while (Bri.letter() == "") {
+                          System.out.print("\n" + Bri.name() + " -- Pick a character of your choice: ");
+                          pickChar = s.next();
+                        if (!(pickChar.equals("")) && pickChar.length() == 1) {
+                                Bri.setLetter(pickChar);
                         } else {
                                 System.out.print("\nThat's not a character. Try again!");
                         }
@@ -310,14 +313,14 @@ public class Woo {
                     play(Fang);
                     checkWin(Fang);
                     turn++;
-                    if (_winner == Fang._color) {
+                    if (_winner == Fang.letter()) {
                       break;
                     }
                     System.out.println("\n" + Bri.name() + ", make your move by choosing your column of destiny.");
                     play(Bri);
                     checkWin(Bri);
                     turn++;
-                    if (_winner == Bri._color) {
+                    if (_winner == Bri.letter()) {
                       break;
                     }
                 }
@@ -328,14 +331,15 @@ public class Woo {
         public void checkWin(Player cheese) {
 
                 //increment wins and losses - Gamer.java
+                String check = cheese.letter();
 
                 for (int r = 0; r < _rows; r++) {
                   for (int c = 0; c < _columns - 3; c++) {
-                    if ( (_board[r][c] == cheese._color) &&
-                       (_board[r][c+1] == cheese._color) &&
-                       (_board[r][c+2] == cheese._color) &&
-                       (_board[r][c+3] == cheese._color) ) {
-                         _winner = cheese._name;
+                    if ( (_board[r][c].equals(check)) &&
+                       (_board[r][c+1].equals(check)) &&
+                       (_board[r][c+2].equals(check)) &&
+                       (_board[r][c+3].equals(check)) ) {
+                         _winner = cheese.name();
                          display();
                          System.out.println(_winner + " has claimed victory!");
                          break;
@@ -345,11 +349,11 @@ public class Woo {
 
                 for (int r = 0; r < _rows - 3; r++) {
                   for (int c = 0; c < _columns; c++) {
-                    if ( (_board[r][c] == cheese._color) &&
-                       (_board[r+1][c] == cheese._color) &&
-                       (_board[r+2][c] == cheese._color) &&
-                       (_board[r+3][c] == cheese._color) ) {
-                         _winner = cheese._name;
+                    if ( (_board[r][c].equals(check)) &&
+                       (_board[r+1][c].equals(check)) &&
+                       (_board[r+2][c].equals(check)) &&
+                       (_board[r+3][c].equals(check)) ) {
+                         _winner = cheese.name();
                          display();
                          System.out.println(_winner + " has claimed victory!");
                          break;
@@ -357,13 +361,13 @@ public class Woo {
                   }
                 }
 
-                for (int r = 0; r < _rows-3; r++) {
+                for (int r = 0; r < _rows - 3; r++) {
                   for (int c = 0; c < _columns - 3; c++) {
-                    if ( (_board[r][c] == cheese._color) &&
-                       (_board[r+1][c+1] == cheese._color) &&
-                       (_board[r+2][c+2] == cheese._color) &&
-                       (_board[r+3][c+3] == cheese._color) ) {
-                         _winner = cheese._name;
+                    if ( (_board[r][c].equals(check)) &&
+                       (_board[r+1][c+1].equals(check)) &&
+                       (_board[r+2][c+2].equals(check)) &&
+                       (_board[r+3][c+3].equals(check)) ) {
+                         _winner = cheese.name();
                          display();
                          System.out.println(_winner + " has claimed victory!");
                          break;
@@ -373,11 +377,11 @@ public class Woo {
 
                 for (int r = 3; r < _rows; r++) {
                   for (int c = 0; c < _columns - 3; c++) {
-                    if ( (_board[r][c] == cheese._color) &&
-                       (_board[r-1][c+1] == cheese._color) &&
-                       (_board[r-2][c+2] == cheese._color) &&
-                       (_board[r-3][c+3] == cheese._color) ) {
-                         _winner = cheese._name;
+                    if ( (_board[r][c].equals(check)) &&
+                       (_board[r-1][c+1].equals(check)) &&
+                       (_board[r-2][c+2].equals(check)) &&
+                       (_board[r-3][c+3].equals(check)) ) {
+                         _winner = cheese.name();
                          display();
                          System.out.println(_winner + " has claimed victory!");
                          break;
