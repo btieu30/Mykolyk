@@ -432,7 +432,7 @@ public class Woo {
                         if (pickMenu != 0) { // forcing the players to keep playing for as long as possible
                             System.out.print("\nThat's not one of the choices, but I'll take it that you want to play again.");
                             System.out.print("\nType your fustrations before continuing: ");
-                                fustrations = s.scanner();
+                                fustrations = s.next();
                         } 
                     }
 
