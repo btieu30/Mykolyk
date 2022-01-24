@@ -354,16 +354,18 @@ public class Woo {
                     play(Fang);
                     checkWin(Fang);
                     turn++;
-                    if (_winner == Fang.letter()) {
+                    if (_winner == Fang.name()) {
                         break;
+                    } else {
+                        System.out.println("\n" + Bri.name() + ", make your move by choosing your column of destiny.");
+                        play(Bri);
+                        checkWin(Bri);
+                        turn++;
+                        if (_winner == Bri.name()) {
+                            break;
+                        }
                     }
-                    System.out.println("\n" + Bri.name() + ", make your move by choosing your column of destiny.");
-                    play(Bri);
-                    checkWin(Bri);
-                    turn++;
-                    if (_winner == Bri.letter()) {
-                        break;
-                    }
+                    
                 }
 
         }
@@ -383,7 +385,7 @@ public class Woo {
                          _winner = cheese.name();
                          display();
                          System.out.println(_winner + " has claimed victory!");
-                         break;
+                         return;
                        }
                   }
                 }
@@ -397,7 +399,7 @@ public class Woo {
                          _winner = cheese.name();
                          display();
                          System.out.println(_winner + " has claimed victory!");
-                         break;
+                         return;
                        }
                   }
                 }
@@ -411,7 +413,7 @@ public class Woo {
                          _winner = cheese.name();
                          display();
                          System.out.println(_winner + " has claimed victory!");
-                         break;
+                         return;
                        }
                   }
                 }
@@ -425,7 +427,7 @@ public class Woo {
                          _winner = cheese.name();
                          display();
                          System.out.println(_winner + " has claimed victory!");
-                         break;
+                         return;
                        }
                   }
                 }
