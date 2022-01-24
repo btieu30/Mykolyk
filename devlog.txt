@@ -21,27 +21,42 @@ OBSTACLES OVERCOME
 1: After successfully implementing our CLEAR_SCREEN code (inspired by
    TerminallyIll.java), we experienced bugs that don't display specific messages
    when needed (e.g if a player inputs an invalid column selection)
+2: After successfully implementing the color code to change the background of
+   player's pieces, we experienced issues with the winner declaration, likely
+   because the user's color is not the only element present in the index.
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-0: After successfully implementing the color code to change the background of
-player's pieces, we're experiencing issues with the winner declaration, likely
-because the user's color is not the only element present in the index.
+0: Our How-To-Play menu requires an actual text input to return back to the menu;
+   (using empty space / return doesn't work).
+1: Our team name is too powerful.
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 0: We can make our terminal and board display colorful! (credit to
    TerminallyIll.java)
+1: We can also change the way our output looks by employing the idea of a
+   coordinate grid in the terminal and clearing previous outputs.
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-we changed ___ to ___ bc...
+0: We changed our program to detect for two players having the same character
+   to allow for more clarity on the board.
+1: We also made it so that the board doesn't require a confirm option before
+   beginning the game and instead implemented the (2: Proceed) option after all
+   the user selections have been made to allow for the user to go back whenever
+   they need to.
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 tales of wisdom gained...
 ||||||||||||||||||||||||||||||||||||||||||
-
+0: It is best to grow code in stages and to keep implementations small for the
+   most part. (Mykolyk clearly took advantage with 11 versions :o )
+1: Visualizations are important in terms of fleshing out code. It's necessary
+   that you properly have the details in line that you do want to add to your
+   code before fully attempting to poke at the machine, but it's okay to add
+   things along the way and update them as needed!
 
 
  ______   ______   __   __   __       ______   _______
@@ -119,10 +134,10 @@ Bri :: Add code for diagonals into v8, discovered several bugs after
 
 2022-01-23
 --------------------------------------------------------------
-Fang :: Complete v9 (Board design, selection and implementation of colored pieces, 
-        working check, updated Player and subclasses), complete v10 (Prevent 
+Fang :: Complete v9 (Board design, selection and implementation of colored pieces,
+        working check, updated Player and subclasses), complete v10 (Prevent
         duplicate piece selection, rematch menu for singlePlay and multiPlay,
         display scores), final version v11 (adjusted board size)
 Bri :: Fix bugs of CLEAR_SCREEN, create v9 to add colors into board, discovered
-       bugs the colors led to in winner declaration
+       bugs the colors led to in winner declaration, update UML, fill in devlog
 ==============================================================
