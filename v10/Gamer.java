@@ -15,6 +15,14 @@ public class Gamer extends Player {
     _letter = newLetter;
   }
 
+  public void won() {
+    _wins ++;
+  }
+
+  public void lost() {
+    _losses ++;
+  }
+
   public int wins() {
     return _wins;
   }

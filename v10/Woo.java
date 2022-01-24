@@ -86,7 +86,7 @@ public class Woo {
 
                 System.out.println(CLEAR_SCREEN + go(1,1));
                 String msg = "\nHey thinkeren, welcome to Connect 4 Life!";
-                msg += "\n[insert another message]";
+                msg += "\n[Final Project by yours truly, FMC and B2, aka Mykolyk]";
                 System.out.println(msg);
 
                 while (true) {
@@ -232,6 +232,7 @@ public class Woo {
                 Bot Poggers = new Bot();
                 String pickChar = "";
                 int pickBg;
+                int pickMenu = 0;
 
                 System.out.print("\nWell well, I see that you are alone. What doest thou call themselves? ");
                 System.out.print("\nType your name: ");
@@ -243,6 +244,9 @@ public class Woo {
 
                         if (!(pickChar.equals("")) && pickChar.length() == 1) {
                                 Mykolyk.setLetter(pickChar);
+                                if (pickChar.equals("B")) {
+                                    Poggers.setLetter("M");
+                                }
                         } else {
                                 System.out.print("\nThat's not a character. Try again!");
                         }
@@ -250,34 +254,57 @@ public class Woo {
 
                 while (Mykolyk._colorBg == 30) {
                         System.out.print("\nColor Superiority");
-                        System.out.print("\n1: Red \n2: Green \n3: Yellow \n4: Blue \n5: Magenta");
+                        System.out.print("\n0: Red \n1: Green \n2: Yellow \n3: Blue \n4: Magenta");
                         System.out.print("\nPick a color of your choice: ");
                         pickBg = s.nextInt();
 
-                        if(pickBg > 0 && pickBg < 6) {
-                                Mykolyk.setBg(pickBg);
+                        if(pickBg >= 0 && pickBg < 5) {
+                                Mykolyk.setBg(pickBg + 1);
                         }
                         else {
                                 System.out.print("\nThat's not a valid selection. Try again!");
                              }
                 }
 
-                while ((_winner ==  "") && (turn <= _maxTurns))  {
-                    play(Mykolyk);
-                    checkWin(Mykolyk);
-                    turn++;
-                    if (_winner == Mykolyk.letter()) {
-                      break;
+                while (pickMenu != 1) { 
+                    while ((_winner ==  "") && (turn <= _maxTurns))  {
+                        play(Mykolyk);
+                        checkWin(Mykolyk);
+                        turn++;
+                        if (_winner == Mykolyk.letter()) {
+                          Mykolyk.won();
+                          break;
+                        } else {
+                            botPlay(Poggers);
+                            checkWin(Poggers);
+                            turn++;
+                            if (_winner == Poggers.letter()){
+                              Mykolyk.lost();
+                              break;
+                            }
+                        }
                     }
-                    botPlay(Poggers);
-                    checkWin(Poggers);
-                    turn++;
-                    if (_winner == Poggers.letter()){
-                      break;
+                    if (turn > _maxTurns) {
+                      System.out.println("All players have occupied all spots on the board without any matches. There is no winner!");
                     }
-                }
-                if (turn > _maxTurns) {
-                  System.out.println("All players have occupied all spots on the board without any matches. There is no winner!");
+
+                    System.out.print("\n====================================");
+                    System.out.print("\nCurrent Wins:Losses = " + Mykolyk.wins() + ":" + Mykolyk.losses());
+                    System.out.print("\nThis game has ended, but what's stopping you from another?");
+                    System.out.print("\nWould you fancy a rematch with Bot Mykolyk?");
+                    System.out.print("\n0: Yes");
+                    System.out.print("\n1: Nah");
+                    System.out.print("\nSelection: ");
+                    pickMenu = s.nextInt();
+                    if (pickMenu == 1) {
+                        System.out.print("\nWhat a shame. Bye!");
+                        break;
+                    } else {
+                        if (pickMenu != 0) { // forcing the player to keep playing for as long as possible
+                            System.out.print("\nThat's not one of the choices, but I'll take it that you want to play again.");
+                        } 
+                    }
+
                 }
         }
 
@@ -287,6 +314,7 @@ public class Woo {
                 Scanner s = new Scanner(System.in);
                 String pickChar = "";
                 int pickBg = -1;
+                int pickMenu = -1;
 
                 int _maxTurns = _rows * _columns;
                 int turn = 0;
@@ -315,7 +343,11 @@ public class Woo {
                     System.out.print("\n" + Bri.name() + " -- Pick a character of your choice: ");
                     pickChar = s.next();
                     if (!(pickChar.equals("")) && pickChar.length() == 1) {
-                            Bri.setLetter(pickChar);
+                            if (pickChar.equals(Fang.letter())) {
+                                System.out.print("\nSorry, first comes, first serve. Pick another one.");
+                            } else {
+                                Bri.setLetter(pickChar);
+                            }
                     } else {
                             System.out.print("\nThat's not a character. Try again!");
                     }
@@ -323,14 +355,14 @@ public class Woo {
 
 
                 System.out.print("\nNow let's choose our colors of greatness! Here are the choices:");
-                System.out.println("\n1: Red \n2: Green \n3: Yellow \n4: Blue \n5: Magenta");
+                System.out.println("\n0: Red \n1: Green \n2: Yellow \n3: Blue \n4: Magenta");
 
                 while (Fang._colorBg == 30) {
                     System.out.print("\n" + Fang.name() + " -- Pick a color of your choice: ");
                     pickBg = s.nextInt();
 
-                    if(pickBg > 0 && pickBg < 6) {
-                        Fang.setBg(pickBg);
+                    if(pickBg >= 0 && pickBg < 5) {
+                        Fang.setBg(pickBg + 1);
                     }
                     else {
                             System.out.print("\nThat's not a valid selection. Try again!");
@@ -341,33 +373,58 @@ public class Woo {
                     System.out.print("\n" + Bri.name() + " -- Pick a color of your choice: ");
                     pickBg = s.nextInt();
 
-                    if(pickBg > 0 && pickBg < 6) {
-                        Bri.setBg(pickBg);
+                    if(pickBg >= 0 && pickBg < 5) {
+                        Bri.setBg(pickBg + 1);
                     }
                     else {
                             System.out.print("\nThat's not a valid selection. Try again!");
                          }
                 }
 
-                while ((_winner == "") && (turn <= _maxTurns)) {
-                    System.out.println("\n" + Fang.name() + ", make your move by choosing your column of destiny.");
-                    play(Fang);
-                    checkWin(Fang);
-                    turn++;
-                    if (_winner == Fang.name()) {
+                while (pickMenu != 1) {
+
+                    while ((_winner == "") && (turn <= _maxTurns)) {
+
+                        System.out.println("\n" + Fang.name() + ", make your move by choosing your column of destiny.");
+                        play(Fang);
+                        checkWin(Fang);
+                        turn++;
+                        if (_winner == Fang.name()) {
+                            Fang.won();
+                            Bri.lost();
+                            break;
+                        } else {
+                            System.out.println("\n" + Bri.name() + ", make your move by choosing your column of destiny.");
+                            play(Bri);
+                            checkWin(Bri);
+                            turn++;
+                            if (_winner == Bri.name()) {
+                                Fang.lost();
+                                Bri.won();
+                                break;
+                            }
+                        }
+
+                    }
+
+                    System.out.print("\n====================================");
+                    System.out.print("\nCurrent Score | " + Fang.name() + ": " + Fang.wins() + " | " + Bri.name() + ": " + Bri.wins());
+                    System.out.print("\nThis game has ended, but what's stopping you from another?");
+                    System.out.print("\nWould you guys fancy a rematch with Bot Mykolyk?");
+                    System.out.print("\n0: Yes");
+                    System.out.print("\n1: Nah");
+                    System.out.print("\nSelection: ");
+                    pickMenu = s.nextInt();
+                    if (pickMenu == 1) {
+                        System.out.print("\nWhat a shame. Bye!");
                         break;
                     } else {
-                        System.out.println("\n" + Bri.name() + ", make your move by choosing your column of destiny.");
-                        play(Bri);
-                        checkWin(Bri);
-                        turn++;
-                        if (_winner == Bri.name()) {
-                            break;
-                        }
+                        if (pickMenu != 0) { // forcing the players to keep playing for as long as possible
+                            System.out.print("\nThat's not one of the choices, but I'll take it that you want to play again.");
+                        } 
                     }
-                    
-                }
 
+                }
         }
 
 
@@ -426,7 +483,7 @@ public class Woo {
                        (_board[r-3][c+3].equals(check)) ) {
                          _winner = cheese.name();
                          display();
-                         System.out.println(_winner + " has claimed victory!");
+                         System.out.println(_winner + " has claimed victory!\n");
                          return;
                        }
                   }
