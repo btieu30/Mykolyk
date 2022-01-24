@@ -54,14 +54,6 @@ tales of wisdom gained...
 ==============================================================
 
 
-yyyy-mm-dd
---------------------------------------------------------------
-Fang :: <Thing member did.>
-Bri :: <Thing member did.>
-Both :: <Thing everyone did.>
-==============================================================
-
-
 2022-01-13
 --------------------------------------------------------------
 Fang :: Explored of smart living via password managers
@@ -111,29 +103,23 @@ Bri :: Create v5 of Woo.java and edit Bot.java (Add customization to Bots + v5
        checks for horizontal and vertical matches w/ updated directions
        Modified v7 (Added column limits, multiplayer customization), Upload new
        and improved flowchart
-Both ::
 ==============================================================
 
 2022-01-21
 --------------------------------------------------------------
-Fang :: <Thing member did.>
-Bri :: <Thing member did.>
 Both :: Discovery and analysis of TerminallyIll.java; Created v8 and re-situated
         the board to top left corner
 ==============================================================
 
 2022-01-22
 --------------------------------------------------------------
-Fang :: <Thing member did.>
 Bri :: Add code for diagonals into v8, discovered several bugs after
        CLEAR_SCREEN implementation
-Both :: <Thing everyone did.>
 ==============================================================
 
 2022-01-23
 --------------------------------------------------------------
-Fang :: <Thing member did.>
+Fang :: 
 Bri :: Fix bugs of CLEAR_SCREEN, create v9 to add colors into board, discovered
        bugs the colors led to in winner declaration
-Both :: <Thing everyone did.>
 ==============================================================

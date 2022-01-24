@@ -84,6 +84,7 @@ public class Woo {
                 int modeChoice = -1;
                 String tempScan = "";
 
+                System.out.println(go(1,1));
                 String msg = "\nHey thinkeren, welcome to Connect 4 Life!";
                 msg += "\n[insert another message]";
                 System.out.println(msg);
@@ -102,6 +103,7 @@ public class Woo {
                         System.out.println(msg);
                         System.out.print("Selection: ");
                         menuChoice = s.nextInt();
+                        System.out.println(go(1,1));
                         System.out.println(CLEAR_SCREEN);
 
                         if (menuChoice == 0) {
