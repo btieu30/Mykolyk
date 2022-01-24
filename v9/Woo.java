@@ -159,7 +159,7 @@ public class Woo {
                          System.out.print ("  " + col + " ");
                 }
 
-                for (int c = 0; c < _columns - 1; c ++) {
+                for (int c = 0; c < _columns; c ++) {
                         top += color(WHITE, background(WHITE), DARK) + "=" + RESET + "===";
                         bottom += "====";
                 }
@@ -286,6 +286,7 @@ public class Woo {
 
                 Scanner s = new Scanner(System.in);
                 String pickChar = "";
+                int pickBg = -1;
 
                 int _maxTurns = _rows * _columns;
                 int turn = 0;
@@ -300,40 +301,68 @@ public class Woo {
                 Gamer Bri = new Gamer(s.next(), "");
 
                 while (Fang.letter() == "") {
-                        System.out.print("\n" + Fang.name() + " -- Pick a character of your choice: ");
-                        pickChar = s.next();
+                    System.out.print("\n" + Fang.name() + " -- Pick a character of your choice: ");
+                    pickChar = s.next();
 
-                        if (!(pickChar.equals("")) && pickChar.length() == 1) {
-                                Fang.setLetter(pickChar);
-                                break;
-                        } else {
-                                System.out.print("\nThat's not a character. Try again!");
-                        }
-                      }
+                    if (!(pickChar.equals("")) && pickChar.length() == 1) {
+                            Fang.setLetter(pickChar);
+                            break;
+                    } else {
+                            System.out.print("\nThat's not a character. Try again!");
+                    }
+                }
                 while (Bri.letter() == "") {
-                          System.out.print("\n" + Bri.name() + " -- Pick a character of your choice: ");
-                          pickChar = s.next();
-                        if (!(pickChar.equals("")) && pickChar.length() == 1) {
-                                Bri.setLetter(pickChar);
-                        } else {
-                                System.out.print("\nThat's not a character. Try again!");
-                        }
-                      }
+                    System.out.print("\n" + Bri.name() + " -- Pick a character of your choice: ");
+                    pickChar = s.next();
+                    if (!(pickChar.equals("")) && pickChar.length() == 1) {
+                            Bri.setLetter(pickChar);
+                    } else {
+                            System.out.print("\nThat's not a character. Try again!");
+                    }
+                }
+
+
+                System.out.print("\nNow let's choose our colors of greatness! Here are the choices:");
+                System.out.print("\n1: Red \n2: Green \n3: Yellow \n4: Blue \n5: Magenta");
+
+                while (Fang._colorBg == 30) {
+                    System.out.print("\n" + Fang.name() + "Pick a color of your choice: ");
+                    pickBg = s.nextInt();
+
+                    if(pickBg > 0 && pickBg < 6) {
+                        Fang.setBg(pickBg);
+                    }
+                    else {
+                            System.out.print("\nThat's not a valid selection. Try again!");
+                         }
+                }
+
+                 while (Bri._colorBg == 30) {
+                    System.out.print("\n" + Bri.name() + "Pick a color of your choice: ");
+                    pickBg = s.nextInt();
+
+                    if(pickBg > 0 && pickBg < 6) {
+                        Bri.setBg(pickBg);
+                    }
+                    else {
+                            System.out.print("\nThat's not a valid selection. Try again!");
+                         }
+                }
 
                 while ((_winner == "") && (turn <= _maxTurns)) {
-                  System.out.println("\n" + Fang.name() + ", make your move by choosing your column of destiny.");
+                    System.out.println("\n" + Fang.name() + ", make your move by choosing your column of destiny.");
                     play(Fang);
                     checkWin(Fang);
                     turn++;
                     if (_winner == Fang.letter()) {
-                      break;
+                        break;
                     }
                     System.out.println("\n" + Bri.name() + ", make your move by choosing your column of destiny.");
                     play(Bri);
                     checkWin(Bri);
                     turn++;
                     if (_winner == Bri.letter()) {
-                      break;
+                        break;
                     }
                 }
 

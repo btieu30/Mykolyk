@@ -15,8 +15,12 @@ public class Gamer extends Player {
     _letter = newLetter;
   }
 
-  public String stats() {
-    return "Wins:Losses = " + _wins + ":" + _losses;
+  public int wins() {
+    return _wins;
+  }
+
+  public int losses() {
+    return _losses;
   }
 
 }
