@@ -158,7 +158,7 @@ public class Woo {
                 System.out.println(color(BRIGHT,WHITE,background(47)) + "\n=========================" + RESET);
                 for (int i = 0; i < _rows; i ++) {
                         for (int n = 0; n < _columns; n ++) {
-                                System.out.print(color(BRIGHT,WHITE,background(47)) + "| " + RESET + _board[i][n] + " ");
+                                System.out.print(color(BRIGHT,WHITE,background(WHITE)) + "| " + RESET + _board[i][n] + " ");
                         }
                         System.out.print("|\n");
                 }
