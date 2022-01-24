@@ -119,7 +119,8 @@ Bri :: Add code for diagonals into v8, discovered several bugs after
 
 2022-01-23
 --------------------------------------------------------------
-Fang :: 
+Fang :: Complete v9 (Board design, selection and implementation of colored pieces, 
+        working check, updated Player and subclasses)
 Bri :: Fix bugs of CLEAR_SCREEN, create v9 to add colors into board, discovered
        bugs the colors led to in winner declaration
 ==============================================================
