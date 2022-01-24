@@ -323,10 +323,10 @@ public class Woo {
 
 
                 System.out.print("\nNow let's choose our colors of greatness! Here are the choices:");
-                System.out.print("\n1: Red \n2: Green \n3: Yellow \n4: Blue \n5: Magenta");
+                System.out.println("\n1: Red \n2: Green \n3: Yellow \n4: Blue \n5: Magenta");
 
                 while (Fang._colorBg == 30) {
-                    System.out.print("\n" + Fang.name() + "Pick a color of your choice: ");
+                    System.out.print("\n" + Fang.name() + " -- Pick a color of your choice: ");
                     pickBg = s.nextInt();
 
                     if(pickBg > 0 && pickBg < 6) {
@@ -338,7 +338,7 @@ public class Woo {
                 }
 
                  while (Bri._colorBg == 30) {
-                    System.out.print("\n" + Bri.name() + "Pick a color of your choice: ");
+                    System.out.print("\n" + Bri.name() + " -- Pick a color of your choice: ");
                     pickBg = s.nextInt();
 
                     if(pickBg > 0 && pickBg < 6) {
