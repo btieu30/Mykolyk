@@ -15,8 +15,8 @@ public class Woo {
         public Woo() {
 
                 _mode = 0;
-                _rows = 5;
-                _columns = 6;
+                _rows = 6;
+                _columns = 7;
                 _board = new String[_rows][_columns];
                 for (int r = 0; r < _board.length; r ++) {
                         for (int c = 0; c < _board[r].length; c ++) {
