@@ -147,6 +147,17 @@ public class Woo {
 
         }
 
+        public void clearBoard() {
+
+            _board = new String[_rows][_columns];
+                for (int r = 0; r < _board.length; r ++) {
+                        for (int c = 0; c < _board[r].length; c ++) {
+                                _board[r][c] = " ";
+                        }
+                }
+
+        }
+
 
         public void display() {
           //display game board
@@ -271,16 +282,14 @@ public class Woo {
                         play(Mykolyk);
                         checkWin(Mykolyk);
                         turn++;
-                        if (_winner == Mykolyk.letter()) {
-                          Mykolyk.won();
-                          break;
+                        if (_winner == Mykolyk.name()) {
+                            Mykolyk.won();
                         } else {
                             botPlay(Poggers);
                             checkWin(Poggers);
                             turn++;
-                            if (_winner == Poggers.letter()){
+                            if (_winner == Poggers.name()){
                               Mykolyk.lost();
-                              break;
                             }
                         }
                     }
@@ -307,6 +316,7 @@ public class Woo {
 
                     _winner = "";
                     turn = 0;
+                    clearBoard();
 
                 }
         }
@@ -395,7 +405,6 @@ public class Woo {
                         if (_winner == Fang.name()) {
                             Fang.won();
                             Bri.lost();
-                            break;
                         } else {
                             System.out.println("\n" + Bri.name() + ", make your move by choosing your column of destiny.");
                             play(Bri);
@@ -404,7 +413,6 @@ public class Woo {
                             if (_winner == Bri.name()) {
                                 Fang.lost();
                                 Bri.won();
-                                break;
                             }
                         }
 
@@ -426,6 +434,10 @@ public class Woo {
                             System.out.print("\nThat's not one of the choices, but I'll take it that you want to play again.");
                         } 
                     }
+
+                    _winner = "";
+                    turn = 0;
+                    clearBoard();
 
                 }
         }
