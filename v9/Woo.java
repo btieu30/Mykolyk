@@ -384,7 +384,7 @@ public class Woo {
                        (_board[r][c+3].equals(check)) ) {
                          _winner = cheese.name();
                          display();
-                         System.out.println(_winner + " has claimed victory!");
+                         System.out.println(_winner + " has claimed victory!\n");
                          return;
                        }
                   }
@@ -398,7 +398,7 @@ public class Woo {
                        (_board[r+3][c].equals(check)) ) {
                          _winner = cheese.name();
                          display();
-                         System.out.println(_winner + " has claimed victory!");
+                         System.out.println(_winner + " has claimed victory!\n");
                          return;
                        }
                   }
@@ -412,7 +412,7 @@ public class Woo {
                        (_board[r+3][c+3].equals(check)) ) {
                          _winner = cheese.name();
                          display();
-                         System.out.println(_winner + " has claimed victory!");
+                         System.out.println(_winner + " has claimed victory!\n");
                          return;
                        }
                   }
