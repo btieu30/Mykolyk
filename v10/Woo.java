@@ -306,7 +306,7 @@ public class Woo {
                     System.out.print("\nSelection: ");
                     pickMenu = s.nextInt();
                     if (pickMenu == 1) {
-                        System.out.print("\nWhat a shame. Bye!");
+                        System.out.println("\nWhat a shame. Bye!\n");
                         break;
                     } else {
                         if (pickMenu != 0) { // forcing the player to keep playing for as long as possible
@@ -328,6 +328,7 @@ public class Woo {
                 String pickChar = "";
                 int pickBg = -1;
                 int pickMenu = -1;
+                String fustrations = "";
 
                 int _maxTurns = _rows * _columns;
                 int turn = 0;
@@ -398,7 +399,6 @@ public class Woo {
 
                     while ((_winner == "") && (turn <= _maxTurns)) {
 
-                        System.out.println("\n" + Fang.name() + ", make your move by choosing your column of destiny.");
                         play(Fang);
                         checkWin(Fang);
                         turn++;
@@ -406,7 +406,6 @@ public class Woo {
                             Fang.won();
                             Bri.lost();
                         } else {
-                            System.out.println("\n" + Bri.name() + ", make your move by choosing your column of destiny.");
                             play(Bri);
                             checkWin(Bri);
                             turn++;
@@ -427,11 +426,13 @@ public class Woo {
                     System.out.print("\nSelection: ");
                     pickMenu = s.nextInt();
                     if (pickMenu == 1) {
-                        System.out.print("\nWhat a shame. Bye!");
+                        System.out.println("\nWhat a shame. Bye!\n");
                         break;
                     } else {
                         if (pickMenu != 0) { // forcing the players to keep playing for as long as possible
                             System.out.print("\nThat's not one of the choices, but I'll take it that you want to play again.");
+                            System.out.print("\nType your fustrations before continuing: ");
+                                fustrations = s.scanner();
                         } 
                     }
 
