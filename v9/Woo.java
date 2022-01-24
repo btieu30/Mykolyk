@@ -150,19 +150,31 @@ public class Woo {
 
         public void display() {
           //display game board
+
+                String top = "";
+                String bottom = color(WHITE, background(WHITE), DARK);
+
                 System.out.println(CLEAR_SCREEN + go(1,1)); //clear screen of menu
                 for (int col = 0; col < _columns; col++) {
                          System.out.print ("  " + col + " ");
                 }
 
-                System.out.println(color(WHITE, background(WHITE), DARK) + "\n=========================" + RESET);
+                for (int c = 0; c < _columns - 1; c ++) {
+                        top += color(WHITE, background(WHITE), DARK) + "=" + RESET + "===";
+                        bottom += "====";
+                }
+                top += color(WHITE, background(WHITE), DARK) + "=" + RESET;
+                bottom += color(WHITE, background(WHITE), DARK) + "=" + RESET;
+
+
+                System.out.println("\n" + top);
                 for (int i = 0; i < _rows; i ++) {
                         for (int n = 0; n < _columns; n ++) {
                                 System.out.print(color(WHITE, background(WHITE)) + "|" + RESET + " " + _board[i][n] + " ");
                         }
                         System.out.print(color(WHITE, background(WHITE)) + "|\n" + RESET);
                 }
-                System.out.println(color(WHITE, background(WHITE), DARK) + "=========================\n" + RESET);
+                System.out.println(bottom + "\n");
         }
 
 
