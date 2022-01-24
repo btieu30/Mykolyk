@@ -155,14 +155,14 @@ public class Woo {
                          System.out.print ("  " + col + " ");
                 }
 
-                System.out.println(color(background(47), DARK) + "\n=========================" + RESET);
+                System.out.println(color(WHITE, background(WHITE), DARK) + "\n=========================" + RESET);
                 for (int i = 0; i < _rows; i ++) {
                         for (int n = 0; n < _columns; n ++) {
-                                System.out.print(color(background(47)) + "|" + RESET + " " + _board[i][n] + " ");
+                                System.out.print(color(WHITE, background(WHITE)) + "|" + RESET + " " + _board[i][n] + " ");
                         }
-                        System.out.print(color(background(47)) + "|\n" + RESET);
+                        System.out.print(color(WHITE, background(WHITE)) + "|\n" + RESET);
                 }
-                System.out.println(color(background(47), DARK) + "=========================\n" + RESET);
+                System.out.println(color(WHITE, background(WHITE), DARK) + "=========================\n" + RESET);
         }
 
 
