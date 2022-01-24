@@ -120,9 +120,9 @@ Bri :: Add code for diagonals into v8, discovered several bugs after
 2022-01-23
 --------------------------------------------------------------
 Fang :: Complete v9 (Board design, selection and implementation of colored pieces, 
-        working check, updated Player and subclasses), complete final version v10 
-        (Prevent duplicate piece selection, rematch menu for singlePlay and multiPlay,
-        display scores)
+        working check, updated Player and subclasses), complete v10 (Prevent 
+        duplicate piece selection, rematch menu for singlePlay and multiPlay,
+        display scores), final version v11 (adjusted board size)
 Bri :: Fix bugs of CLEAR_SCREEN, create v9 to add colors into board, discovered
        bugs the colors led to in winner declaration
 ==============================================================
