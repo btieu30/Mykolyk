@@ -84,7 +84,7 @@ public class Woo {
                 int modeChoice = -1;
                 String tempScan = "";
 
-                System.out.println(go(1,1));
+                System.out.println(CLEAR_SCREEN + go(1,1));
                 String msg = "\nHey thinkeren, welcome to Connect 4 Life!";
                 msg += "\n[insert another message]";
                 System.out.println(msg);
@@ -103,8 +103,7 @@ public class Woo {
                         System.out.println(msg);
                         System.out.print("Selection: ");
                         menuChoice = s.nextInt();
-                        System.out.println(go(1,1));
-                        System.out.println(CLEAR_SCREEN);
+                        System.out.println(CLEAR_SCREEN + go(1,1));
 
                         if (menuChoice == 0) {
                           //directions
@@ -146,8 +145,7 @@ public class Woo {
 
         public void display() {
           //display game board
-                System.out.println(go(1,1));
-                System.out.println(CLEAR_SCREEN); //clear screen of menu
+                System.out.println(CLEAR_SCREEN + go(1,1)); //clear screen of menu
                 for (int col = 0; col < _columns; col++) {
                          System.out.print ("  " + col + " ");
                 }
