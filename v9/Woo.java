@@ -116,7 +116,7 @@ public class Woo {
                                 System.out.println(msg);
                                 System.out.print("\nType Something to Return: ");
                                 tempScan = s.next();
-                                System.out.println(CLEAR_SCREEN + go(1,1))
+                                System.out.println(CLEAR_SCREEN + go(1,1));
                         } else
                         if (menuChoice == 1) {
                           //modeChoice
@@ -132,13 +132,13 @@ public class Woo {
                                         _mode = 2;
                                 } else
                                         System.out.println("Invalid. Returning to the menu...");
-                                System.out.println(CLEAR_SCREEN + go(1,1))
+                                System.out.println(CLEAR_SCREEN + go(1,1));
                         } else
                         if (menuChoice == 2 && _mode > 0) {
-                                System.out.println(CLEAR_SCREEN + go(1,1))
+                                System.out.println(CLEAR_SCREEN + go(1,1));
                                 break;
                         } else
-                                System.out.println("Invalid Input")
+                                System.out.println("Invalid Input");
                                 System.out.println(CLEAR_SCREEN + go(1,1));
 
                 }
