@@ -91,6 +91,7 @@ public class Woo {
 
                 while (true) {
                   //menu
+                        System.out.println(CLEAR_SCREEN + go(1,1));
                         msg = "\n====================================\n";
                         msg += "\nMENU";
                         msg += "\n0: How-To-Play";
@@ -103,10 +104,10 @@ public class Woo {
                         System.out.println(msg);
                         System.out.print("Selection: ");
                         menuChoice = s.nextInt();
-                        System.out.println(CLEAR_SCREEN + go(1,1));
 
                         if (menuChoice == 0) {
                           //directions
+                                System.out.println(CLEAR_SCREEN + go(1,1));
                                 msg = "\n====================================\n";
                                 msg += "\nDirections: ";
                                 msg += "\n- Begin by choosing your gamemode: single player or multiplayer.";
@@ -120,6 +121,7 @@ public class Woo {
                         } else
                         if (menuChoice == 1) {
                           //modeChoice
+                                System.out.println(CLEAR_SCREEN + go(1,1));
                                 System.out.print("\nPick a mode:");
                                 System.out.print("\n0: Single as a Pringle");
                                 System.out.println("\n1: Duo Player");
