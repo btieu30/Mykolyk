@@ -91,7 +91,6 @@ public class Woo {
 
                 while (true) {
                   //menu
-                        System.out.println(CLEAR_SCREEN + go(1,1));
                         msg = "\n====================================\n";
                         msg += "\nMENU";
                         msg += "\n0: How-To-Play";
